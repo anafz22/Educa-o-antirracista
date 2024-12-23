@@ -1,0 +1,303 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+  --primary-color: #A68F72; /* cor do fundo  */
+  --primary-color-light: #83695a; /* cor dos blocos  */
+  --primary-color-extra-light: #72594b; /* cor que fica os blocos ao passar o mouse  */
+  --secondary-color: #d79447;
+  --secondary-color-dark: #d79447;
+  --text-light: #d1d5db;
+  --white: #ffffff;
+  --max-width: 1200px;
+}
+
+/* Reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--primary-color);
+}
+
+/* Seção Geral */
+.section__container {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 5rem 1rem;
+}
+
+.section__header {
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+/* Classe Adicional para Títulos */
+.title-style {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--white);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+  /* Opcional: Animação pode ser adicionada se desejar */
+  /* animation: fadeIn 2s ease-out forwards; */
+}
+
+/* Subtítulo da Banner */
+.banner__subtext {
+  margin-top: 1rem; /* Espaçamento entre os textos */
+  font-size: 1.2rem; /* Tamanho da fonte menor */
+  font-weight: 400; /* Normal, sem ser negrito */
+  color: var(--text-light); /* Cor mais clara ou a que você preferir */
+}
+
+/* Botões */
+.btn {
+  padding: 1rem 2rem;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  color: var(--white);
+  background-color: var(--secondary-color);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--secondary-color-dark);
+}
+
+/* Imagens */
+img {
+  width: 100%;
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Navegação */
+nav {
+  padding: 1.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cor {
+  background-color: #574a3c; /* cor do menu  */
+}
+
+.logo {
+  font-family: 'Arial', sans-serif; /* Escolha uma fonte limpa e profissional */
+  font-size: 2.5rem; /* Ajuste o tamanho conforme necessário */
+  font-weight: bold; /* Deixe o texto em negrito */
+  color: #333; /* Escolha uma cor que se destaque no fundo */
+  text-transform: uppercase; /* Deixe todas as letras maiúsculas */
+  letter-spacing: 0.1rem; /* Aumente o espaçamento entre as letras */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Adicione uma sombra para um efeito 3D */
+  display: inline-block; /* Garante que ele se comporte como uma imagem */
+  cursor: pointer; /* Opcional: cursor muda ao passar o mouse */
+}
+
+
+.nav__links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  font-size: 15px;
+  color: #1f2125;
+}
+
+.link a {
+  position: relative;
+  padding-bottom: 0.75rem;
+  color: var(--white);
+}
+
+.link a::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 0;
+  left: 0;
+  bottom: 0;
+  background-color: var(--secondary-color);
+  transition: 0.3s;
+}
+
+.link a:hover::after {
+  width: 50%;
+}
+
+/* Banner */
+.banner {
+  height: 80vh; 
+  background: linear-gradient(#00000085, rgba(0, 0, 0, 0.651)), url('images/teste.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative; /* Necessário para posicionar o texto */
+}
+
+.banner-text {
+  position: absolute;
+  /* Adicionado flexbox para alinhar textos */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0; /* Inicialmente invisível */
+  animation: fadeIn 2s ease-out forwards; /* Animação para surgir */
+}
+
+.banner-text h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--white);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+}
+
+.banner-text p.banner__subtext {
+  margin-top: 1rem; /* Espaçamento entre os textos */
+  font-size: 1.2rem; /* Tamanho da fonte menor */
+  font-weight: 400; /* Normal, sem ser negrito */
+  color: var(--text-light); /* Cor mais clara ou a que você preferir */
+}
+
+/* Animação para fazer o texto aparecer */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Explore Container */
+.explore__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.explore__nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.explore__nav span {
+  padding: 0 6px;
+  font-size: 1.5rem;
+  color: var(--white);
+  border: 2px solid var(--white);
+  border-radius: 100%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.explore__nav span:hover {
+  color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+.explore__grid {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.explore__card {
+  padding: 1rem;
+  background-color: var(--primary-color-light);
+  border: 2px solid transparent;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.explore__card:hover {
+  background-color: var(--primary-color-extra-light);
+  border-color: var(--secondary-color);
+}
+
+.explore__card span {
+  display: inline-block;
+  padding: 2px 9px;
+  margin-bottom: 1rem;
+  font-size: 1.75rem;
+  color: var(--white);
+  background-color: var(--secondary-color-dark);
+  border-radius: 5px;
+}
+
+.explore__card h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.explore__card p {
+  margin-bottom: 1rem;
+  color: var(--text-light);
+}
+
+.explore__card a {
+  color: var(--white);
+  transition: 0.3s;
+}
+
+.explore__card a:hover {
+  color: var(--secondary-color);
+}
+
+/* Sobre Nós */
+.about__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  align-items: center;
+}
+
+.about__content p {
+  margin-bottom: 1rem;
+  color: var(--text-light);
+}
+
+.about__image img {
+  max-width: 400px;
+  margin: auto;
+  border-radius: 10px;
+}
+
+/* Rodapé */
+footer {
+  background-color: #574a3c; /* cor do rodapé  */
+  color: #afaeae;
+  font-size: 15px;
+  text-align: center;
+  padding: 10px;
+  margin-top: auto;
+}
+
+footer p {
+  margin: 0;
+}
